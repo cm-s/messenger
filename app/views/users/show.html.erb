@@ -1,0 +1,8 @@
+<h1>Das sine Sie Gespräche</h1>
+<ul>
+
+<% @user.conversations.each do |c| %>
+	<pre>Empfänger: <%= c.recipients %> Erstellt bei <%= c.created_at %> </pre>
+<% end %>
+
+</ul>

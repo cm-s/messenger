@@ -1,0 +1,8 @@
+<h1>Ein Konto erstellen!</h1>
+<%= form_for @user, url: { action: 'create' } do |fields| %>
+	<p> Fn <%= fields.text_field( :first_name ) %> </p> <br>
+	<p> Ln <%= fields.text_field( :last_name ) %> </p> <br>
+	<p> Name <%= fields.text_field( :user_name ) %> </p> <br>
+	<p> Passwort: <%= password_field(:create, :password) %> </p> <br>
+	<%= submit_tag( 'create' ) %>
+<% end %>

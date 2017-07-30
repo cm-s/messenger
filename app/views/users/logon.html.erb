@@ -1,0 +1,7 @@
+<h1>Einloggen oder Anmeldung für Material messenger</h1>
+<%= form_for @user, url: { action: "login" } do |fields| %>
+	<%= fields.text_field( :user_name ) %> <br>
+	<%= password_field(:login, :password) %> <br>
+	<%= submit_tag( 'login' )  %>
+<% end %>
+<%= link_to('Haben Sie kein Konto? Jetzt Anmelden!', new_user_url) %>
