@@ -1,0 +1,6 @@
+<pre>Du bist: <%= @user.first_name %></pre>
+<pre>Gespräch mit:<% @conversation.recipients.split(/\s/i).map { |usr| usr = User.find_by(id: usr).first_name }.each do |usr| %> <%= usr %><% end %></pre>
+
+<% @conversation.messages.each do |msg| %>
+	<%= msg.content %><br>
+<% end %>

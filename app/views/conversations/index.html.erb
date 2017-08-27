@@ -1,0 +1,13 @@
+<h1>Das sine Sie Gespräche</h1>
+<ul>
+
+<% @user.conversations.each do |c| %>
+	<pre>Empfänger: <% c.recipients.split(/\s/i).map { |usr| usr = User.find_by(id: usr).first_name }.each do |usr| %> <%= usr %> <% end %> Erstellt bei: <%= c.created_at %> <%= link_to("Gehe zu Konversation", user_conversation_url({user_id: @user.id, id: c.id})) %></pre>
+<% end %>
+
+<%= form_for [:user, @conversation] do |fields| %>
+	<%= fields.text_field(:recipients) %>
+	<%= submit_tag('Konversation erstellen') %>
+<% end %>
+
+</ul>

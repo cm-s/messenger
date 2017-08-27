@@ -1,5 +1,7 @@
 class ConversationsController < ApplicationController
 	def show
+		@user = User.find_by(id: readURI(2))
+		@conversation = Conversation.find_by({user_id: @user.id, id: readURI(4)})
 	end
 
 	def index
