@@ -1,4 +1,3 @@
-
 users = User.create([
   { first_name: 'Calzo', last_name: 'Han', user_name: 'Han Calo', password: 'Hcalo1998' },
   { first_name: 'Manny', last_name: 'zaterian', user_name: 'Mz_the_man', password: 'squirtyismypuppy123' },
@@ -11,7 +10,7 @@ users = User.create([
 @user3 = User.find(3)
 @user4 = User.find(4)
 @user5 = User.find(5)
-@user1.conversations = Conversation.create([ { recipients: "2, 3" }, { recipients: ' ' } ])
+@user1.conversations = Conversation.create([ { recipients: "2 3" } ])
 @user2.conversations = Conversation.create([ { recipients: '4' } ])
 @user3.conversations = Conversation.create([ { recipients: '4' } ])
 @user5.conversations = Conversation.create([ { recipients: '1' } ])
