@@ -2,10 +2,15 @@ class ConversationsController < ApplicationController
 	def show
 	end
 
-	def new
+	def index
+		@user = User.find_by(id: readURI(2))
+		@conversations = Conversation.all
 		@conversation = Conversation.new()
 	end
 
+	def new
+		@conversation = Conversation.new()
+	end
 	def create
 		@conversation = Conversation.new(conversation_params)
 		if @conversation.save!

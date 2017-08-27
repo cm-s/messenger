@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def login
 		@user = User.new(login_params)
 		if @user = User.find_by(user_name: @user.user_name)
-			redirect_to(user_url({ id: @user }))
+			redirect_to(user_conversations_url({user_id: @user.id}))
 		else
 			puts "CLIENT REDIRECTED"
 			redirect_to(root_url)
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find_by(id: readURI(2))
-		@conversations = Conversation.all
 	end
 
 	private
