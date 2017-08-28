@@ -12,27 +12,27 @@
 
 ActiveRecord::Schema.define(version: 20170726080135) do
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "recipients"
-    t.datetime "created_at"
-    t.index ["user_id"], name: "index_conversations_on_user_id"
-  end
+	create_table "conversations", force: :cascade do |t|
+		t.integer "user_id"
+		t.string "recipients"
+		t.datetime "created_at"
+		t.index ["user_id"], name: "index_conversations_on_user_id"
+	end
 
-  create_table "messages", force: :cascade do |t|
-    t.integer "conversation_id"
-    t.text "content"
-    t.datetime "read_at"
-    t.datetime "created_at"
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-  end
+	create_table "messages", force: :cascade do |t|
+		t.integer "conversation_id"
+		t.text "content"
+		t.datetime "read_at"
+		t.datetime "created_at"
+		t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+	end
 
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "password"
-    t.string "user_name"
-    t.datetime "created_at"
-  end
+	create_table "users", force: :cascade do |t|
+		t.string "first_name"
+		t.string "last_name"
+		t.string "password"
+		t.string "user_name"
+		t.datetime "created_at"
+	end
 
 end
