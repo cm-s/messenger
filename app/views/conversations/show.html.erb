@@ -4,3 +4,8 @@
 <% @conversation.messages.each do |msg| %>
 	<%= msg.content %><br>
 <% end %>
+
+<%= form_for [:user, :conversation, @message] do |fields| %>
+	<%= fields.text_field :content %>
+	<%= submit_tag 'Send' %>
+<% end %>
